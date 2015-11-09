@@ -92,8 +92,8 @@ module Controls =
     
     let Button = Doc.Button
     
-    let ShowErrors extras (submit: Submitter<Result<_>>) =
-        Doc.ShowErrors submit.View (function
+    let ShowErrors extras (submit: View<Result<_>>) =
+        Doc.ShowErrors submit (function
             | [] ->
                 Doc.Empty
             | errors ->

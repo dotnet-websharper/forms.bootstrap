@@ -37,7 +37,7 @@ module Client =
                 B.Checkbox "Keep me logged in" [] (check, [cls "input-lg"], [])
                 B.Radio "This is a radio button" [] (check, [], [])
                 B.Button "Log in" [B.Class "btn btn-primary"] submit.Trigger
-                B.ShowErrors [attr.style "margin-top:1em;"] submit
+                B.ShowErrors [attr.style "margin-top:1em;"] submit.View
             ]
         )
 
