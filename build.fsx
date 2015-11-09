@@ -3,7 +3,7 @@ open IntelliFactory.Build
 
 let bt =
     BuildTool().PackageId("WebSharper.Forms.Bootstrap")
-        .VersionFrom("WebSharper")
+        .VersionFrom("WebSharper", "alpha")
         .WithFSharpVersion(FSharpVersion.FSharp30)
         .WithFramework(fun f -> f.Net40)
 
@@ -13,7 +13,7 @@ let main =
         .Embed([])
         .References(fun r ->
             [
-                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).Reference()
+                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).ForceFoundVersion().Reference()
             ])
 
 let tests =
