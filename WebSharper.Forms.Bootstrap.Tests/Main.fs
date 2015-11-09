@@ -17,17 +17,17 @@ module Client =
     let cls = Attr.Class
 
     let LoginForm () =
-        Piglet.Return (fun user pass check -> user, pass, check)
-        <*> (Piglet.Yield ""
+        Form.Return (fun user pass check -> user, pass, check)
+        <*> (Form.Yield ""
             |> Validation.IsNotEmpty "Must enter a username")
-        <*> (Piglet.Yield ""
+        <*> (Form.Yield ""
             |> Validation.IsNotEmpty "Must enter a password")
-        <*> Piglet.Yield false
-        |> Piglet.WithSubmit
-        |> Piglet.Run (fun (user, pass, check) ->
+        <*> Form.Yield false
+        |> Form.WithSubmit
+        |> Form.Run (fun (user, pass, check) ->
             JS.Alert("Welcome, " + user + "!")
         )
-        |> Piglet.Render (fun user pass check submit ->
+        |> Form.Render (fun user pass check submit ->
             form [
                 B.Input "Username" [] (user, [cls "sr-only"], [cls "input-lg"; attr.readonly ""])
                 B.Simple.TextAreaWithError "Username - echoed" user submit.View

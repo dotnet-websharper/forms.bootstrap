@@ -114,3 +114,6 @@ module Controls =
         let TextAreaWithError lbl target submit = TextAreaWithError lbl [] (target, [], []) submit
         let Checkbox lbl target = Checkbox lbl [] (target, [], [])
         
+        let Button label f = Button label [cls "button btn-primary"] f
+
+        let ShowErrors submit = ShowErrors [] submit
