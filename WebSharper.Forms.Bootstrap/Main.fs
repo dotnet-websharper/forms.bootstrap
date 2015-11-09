@@ -14,7 +14,7 @@ module Controls =
     open WebSharper.UI.Next
     open WebSharper.UI.Next.Html
     open WebSharper.UI.Next.Client
-    open WebSharper.UI.Next.Piglets
+    open WebSharper.Forms
 
     let private cls = Attr.Class
 

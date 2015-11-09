@@ -3,6 +3,6 @@
   <dependencies>
     <dependency name="websharper" rev="latest.integration"  />
     <dependency name="websharper.ui.next" rev="latest.integration"  />
-    <dependency name="websharper.ui.next.piglets" rev="latest.integration"  />
+    <dependency name="websharper.forms" rev="latest.integration"  />
   </dependencies>
 </ivy-module>

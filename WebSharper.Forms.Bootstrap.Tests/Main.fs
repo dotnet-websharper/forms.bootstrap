@@ -9,7 +9,7 @@ open WebSharper.UI.Next.Html
 module Client =
     open WebSharper.JavaScript
     open WebSharper.UI.Next.Client
-    open WebSharper.UI.Next.Piglets
+    open WebSharper.Forms
     open WebSharper.Forms.Bootstrap
 
     module B = Controls

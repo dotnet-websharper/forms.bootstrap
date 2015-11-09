@@ -13,7 +13,7 @@ let main =
         .Embed([])
         .References(fun r ->
             [
-                r.NuGet("WebSharper.UI.Next.Piglets").Latest(allowPreRelease=true).Reference()
+                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).Reference()
             ])
 
 let tests =
@@ -24,7 +24,7 @@ let tests =
             [
                 r.Project(main)
                 r.NuGet("WebSharper.UI.Next").Reference()
-                r.NuGet("WebSharper.UI.Next.Piglets").Latest(allowPreRelease=true).Reference()
+                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).Reference()
             ])
 
 bt.Solution [
@@ -36,7 +36,7 @@ bt.Solution [
             { c with
                 Title = Some "WebSharper.Forms.Bootstrap"
                 LicenseUrl = Some "http://websharper.com/licensing"
-                ProjectUrl = Some "https://github.com/intellifactory/https://github.com/intellifactory/websharper.forms.bootstrap"
+                ProjectUrl = Some "https://github.com/intellifactory/websharper.forms.bootstrap"
                 Description = "A reactive WebSharper forms library using Bootstrap"
                 RequiresLicenseAcceptance = true })
         .Add(main)
