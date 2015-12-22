@@ -23,8 +23,8 @@ let tests =
         .References(fun r ->
             [
                 r.Project(main)
-                r.NuGet("Zafir.UI.Next").Reference()
-                r.NuGet("Zafir.Forms").Latest(allowPreRelease=true).Reference()
+                r.NuGet("Zafir.UI.Next").Latest(true).ForceFoundVersion().Reference()
+                r.NuGet("Zafir.Forms").Latest(true).ForceFoundVersion().Reference()
             ])
 
 bt.Solution [
