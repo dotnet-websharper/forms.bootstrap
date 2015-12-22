@@ -13,6 +13,7 @@ let main =
         .Embed([])
         .References(fun r ->
             [
+                r.NuGet("Zafir.UI.Next").Latest(true).ForceFoundVersion().Reference()
                 r.NuGet("Zafir.Forms").Latest(allowPreRelease=true).ForceFoundVersion().Reference()
             ])
 
