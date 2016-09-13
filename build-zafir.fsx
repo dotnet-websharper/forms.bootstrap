@@ -10,6 +10,7 @@ let bt =
 let main =
     bt.Zafir.Library("WebSharper.Forms.Bootstrap")
         .SourcesFromProject()
+        .WithSourceMap()
         .Embed([])
         .References(fun r ->
             [
@@ -20,6 +21,7 @@ let main =
 let tests =
     bt.Zafir.SiteletWebsite("WebSharper.Forms.Bootstrap.Tests")
         .SourcesFromProject()
+        .WithSourceMap()
         .Embed([])
         .References(fun r ->
             [
