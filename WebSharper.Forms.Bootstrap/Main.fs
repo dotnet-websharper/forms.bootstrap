@@ -54,7 +54,7 @@ module Controls =
             ]
         ]
 
-    let private __InputWithError inputFun lbl extras ((target: Var<_>), labelExtras, targetExtras) (submitView: View<Result<_>>) =
+    let private __InputWithError inputFun lbl extras ((target: IRef<_>), labelExtras, targetExtras) (submitView: View<Result<_>>) =
         let tv = submitView.Through target
         let errorOpt, errorClassOpt =
             tv.Map (fun res ->
