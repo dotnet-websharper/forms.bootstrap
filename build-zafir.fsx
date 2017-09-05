@@ -2,32 +2,32 @@
 open IntelliFactory.Build
 
 let bt =
-    BuildTool().PackageId("Zafir.Forms.Bootstrap")
-        .VersionFrom("Zafir", "alpha")
+    BuildTool().PackageId("WebSharper.Forms.Bootstrap")
+        .VersionFrom("WebSharper", "alpha")
         .WithFSharpVersion(FSharpVersion.FSharp30)
         .WithFramework(fun f -> f.Net40)
 
 let main =
-    bt.Zafir.Library("WebSharper.Forms.Bootstrap")
+    bt.WebSharper4.Library("WebSharper.Forms.Bootstrap")
         .SourcesFromProject()
         .WithSourceMap()
         .Embed([])
         .References(fun r ->
             [
-                r.NuGet("Zafir.UI.Next").Latest(true).ForceFoundVersion().Reference()
-                r.NuGet("Zafir.Forms").Latest(allowPreRelease=true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.UI.Next").Latest(true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).ForceFoundVersion().Reference()
             ])
 
 let tests =
-    bt.Zafir.SiteletWebsite("WebSharper.Forms.Bootstrap.Tests")
+    bt.WebSharper4.SiteletWebsite("WebSharper.Forms.Bootstrap.Tests")
         .SourcesFromProject()
         .WithSourceMap()
         .Embed([])
         .References(fun r ->
             [
                 r.Project(main)
-                r.NuGet("Zafir.UI.Next").Latest(true).ForceFoundVersion().Reference()
-                r.NuGet("Zafir.Forms").Latest(true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.UI.Next").Latest(true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.Forms").Latest(true).ForceFoundVersion().Reference()
             ])
 
 bt.Solution [
@@ -37,10 +37,10 @@ bt.Solution [
     bt.NuGet.CreatePackage()
         .Configure(fun c ->
             { c with
-                Title = Some "Zafir.Forms.Bootstrap"
+                Title = Some "WebSharper.Forms.Bootstrap"
                 LicenseUrl = Some "http://websharper.com/licensing"
                 ProjectUrl = Some "https://github.com/intellifactory/websharper.forms.bootstrap"
-                Description = "A reactive Zafir forms library using Bootstrap"
+                Description = "A reactive WebSharper forms library using Bootstrap"
                 RequiresLicenseAcceptance = true })
         .Add(main)
 ]

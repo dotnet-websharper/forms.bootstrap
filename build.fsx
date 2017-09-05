@@ -13,7 +13,7 @@ let main =
         .Embed([])
         .References(fun r ->
             [
-                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.Forms").Version("(,4.0)").ForceFoundVersion().Reference()
             ])
 
 let tests =
@@ -23,8 +23,8 @@ let tests =
         .References(fun r ->
             [
                 r.Project(main)
-                r.NuGet("WebSharper.UI.Next").Reference()
-                r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).Reference()
+                r.NuGet("WebSharper.UI.Next").Version("(,4.0)").Reference()
+                r.NuGet("WebSharper.Forms").Version("(,4.0)").Reference()
             ])
 
 bt.Solution [
