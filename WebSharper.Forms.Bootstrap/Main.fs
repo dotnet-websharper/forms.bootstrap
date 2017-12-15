@@ -11,9 +11,9 @@ open WebSharper
 [<Require(typeof<Resources.CSS>)>]
 [<JavaScript>]
 module Controls =
-    open WebSharper.UI.Next
-    open WebSharper.UI.Next.Html
-    open WebSharper.UI.Next.Client
+    open WebSharper.UI
+    open WebSharper.UI.Html
+    open WebSharper.UI.Client
     open WebSharper.Forms
 
     let private cls = Attr.Class
@@ -21,34 +21,34 @@ module Controls =
     let Class = Attr.Class
     
     let Input lbl extras (target, labelExtras, targetExtras) =
-        divAttr (cls "form-group" :: extras) [
-            labelAttr labelExtras [text lbl]
+        div (cls "form-group" :: extras) [
+            label labelExtras [text lbl]
             Doc.Input (cls "form-control" :: targetExtras) target
         ]
 
     let InputPassword lbl extras (target, labelExtras, targetExtras) =
-        divAttr (cls "form-group" :: extras) [
-            labelAttr labelExtras [text lbl]
+        div (cls "form-group" :: extras) [
+            label labelExtras [text lbl]
             Doc.PasswordBox (cls "form-control" :: targetExtras) target
         ]
 
     let TextArea lbl extras (target, labelExtras, targetExtras) =
-        divAttr (cls "form-group" :: extras) [
-            labelAttr labelExtras [text lbl]
+        div (cls "form-group" :: extras) [
+            label labelExtras [text lbl]
             Doc.InputArea (cls "form-control" :: targetExtras) target
         ]
 
     let Checkbox lbl extras (target, labelExtras, targetExtras) =
-        divAttr (cls "checkbox" :: extras) [
-            labelAttr labelExtras [
+        div (cls "checkbox" :: extras) [
+            label labelExtras [
                 Doc.CheckBox targetExtras target
                 text lbl
             ]
         ]
 
     let Radio lbl extras (target, labelExtras, targetExtras) =
-        divAttr (cls "radio" :: extras) [
-            labelAttr labelExtras [
+        div (cls "radio" :: extras) [
+            label labelExtras [
                 Doc.Radio targetExtras true target
                 text lbl
             ]
@@ -72,17 +72,17 @@ module Controls =
             )
             |> fun view ->
                 view.Map fst, view.Map snd
-        divAttr [
+        div [
             yield cls "form-group"
             yield Attr.DynamicClass "has-error" errorClassOpt (fun opt -> opt.IsSome)
             yield! extras
         ] [
-            yield labelAttr labelExtras [text lbl] :> Doc
+            yield label labelExtras [text lbl] :> Doc
             yield inputFun (cls "form-control" :: targetExtras) target :> Doc
             yield errorOpt.Doc (function
                 | None -> Doc.Empty
                 | Some error ->
-                    spanAttr [cls "help-block"] [text error] :> Doc
+                    span [cls "help-block"] [text error] :> Doc
             )
         ]
 
@@ -97,11 +97,11 @@ module Controls =
             | [] ->
                 Doc.Empty
             | errors ->
-                divAttr extras [
+                div extras [
                     errors
-                    |> Seq.map (fun m -> p [text m.Text])
+                    |> Seq.map (fun m -> p [] [text m.Text])
                     |> Seq.cast
-                    |> divAttr [cls "alert alert-danger"]
+                    |> div [cls "alert alert-danger"]
                 ] :> Doc
         )
 

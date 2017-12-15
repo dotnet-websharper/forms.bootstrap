@@ -14,7 +14,7 @@ let main =
         .Embed([])
         .References(fun r ->
             [
-                r.NuGet("WebSharper.UI.Next").Latest(true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.UI").Latest(true).ForceFoundVersion().Reference()
                 r.NuGet("WebSharper.Forms").Latest(allowPreRelease=true).ForceFoundVersion().Reference()
             ])
 
@@ -26,7 +26,7 @@ let tests =
         .References(fun r ->
             [
                 r.Project(main)
-                r.NuGet("WebSharper.UI.Next").Latest(true).ForceFoundVersion().Reference()
+                r.NuGet("WebSharper.UI").Latest(true).ForceFoundVersion().Reference()
                 r.NuGet("WebSharper.Forms").Latest(true).ForceFoundVersion().Reference()
             ])
 

@@ -2,13 +2,13 @@ namespace WebSharper.Forms.Bootstrap.Tests
 
 open WebSharper
 open WebSharper.Sitelets
-open WebSharper.UI.Next
-open WebSharper.UI.Next.Html
+open WebSharper.UI
+open WebSharper.UI.Html
 
 [<JavaScript>]
 module Client =
     open WebSharper.JavaScript
-    open WebSharper.UI.Next.Client
+    open WebSharper.UI.Client
     open WebSharper.Forms
     open WebSharper.Forms.Bootstrap
 
@@ -28,7 +28,7 @@ module Client =
             JS.Alert("Welcome, " + user + "!")
         )
         |> Form.Render (fun user pass check submit ->
-            form [
+            form [] [
                 B.Input "Username" [] (user, [cls "sr-only"], [cls "input-lg"; attr.readonly ""])
                 B.Simple.TextAreaWithError "Username - echoed" user submit.View
                 B.TextAreaWithError "Username - echoed" [] (user, [], []) submit.View
@@ -42,8 +42,8 @@ module Client =
         )
 
 module Site =
-    open WebSharper.UI.Next.Server
-    open WebSharper.UI.Next.Html
+    open WebSharper.UI.Server
+    open WebSharper.UI.Html
 
     [<Website>]
     let Main =
