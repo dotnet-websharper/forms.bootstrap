@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${title}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <title>WebSharper.Forms.Bootstrap Tests</title>
+    <link rel="stylesheet" type="text/css" href="Content/WebSharper.Forms.Bootstrap.Tests.css" />
     <style>
         /* Sticky footer styles */
         html {
@@ -30,6 +30,7 @@
             margin: 20px 0;
         }
     </style>
+    <script type="text/javascript" src="Content/WebSharper.Forms.Bootstrap.Tests.head.js"></script>
 </head>
 <body>
     <!-- Static navbar -->
@@ -51,10 +52,7 @@
             </div><!--/.nav-collapse -->
         </div>
     </nav>
-    <div class="container">
-        <div data-replace="body">
-        </div>
-    </div>
+    <div id="main" class="container"></div>
     <footer class="footer">
         <div class="container">
             <p class="text-muted">
@@ -63,6 +61,6 @@
             </p>
         </div>
     </footer>
-    <script data-replace="scripts"></script>
+    <script type="text/javascript" src="Content/WebSharper.Forms.Bootstrap.Tests.js"></script>
 </body>
 </html>

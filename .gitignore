@@ -1,9 +1,14 @@
 /.vs/
 /*.suo
-/*.Tests/Scripts/WebSharper/
-/*.Tests/Content/WebSharper/
+/*.Tests/Content/
 /build/
 /*/bin/
 /*/obj/
 /packages/
 /tools/packages/
+
+bin/
+obj/
+/.fake/
+/paket-files/
+/.vscode/

@@ -16,6 +16,7 @@ module Client =
 
     let cls = Attr.Class
 
+    [<SPAEntryPoint>]
     let LoginForm () =
         Form.Return (fun user pass check -> user, pass, check)
         <*> (Form.Yield ""
@@ -40,16 +41,4 @@ module Client =
                 B.ShowErrors [attr.style "margin-top:1em;"] submit.View
             ]
         )
-
-module Site =
-    open WebSharper.UI.Server
-    open WebSharper.UI.Html
-
-    [<Website>]
-    let Main =
-        Application.SinglePage (fun ctx ->
-            Content.Page(
-                Title = "WebSharper.Forms.Bootstrap Tests",
-                Body = [ client <@ Client.LoginForm() @> ]
-            )
-        )
+        |> Doc.RunById "main"
