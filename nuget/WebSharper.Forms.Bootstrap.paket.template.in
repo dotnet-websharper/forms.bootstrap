@@ -14,6 +14,6 @@ files
     ../WebSharper.Forms.Bootstrap/bin/Release/netstandard2.0/WebSharper.Forms.Bootstrap.dll ==> lib/netstandard2.0
     ../WebSharper.Forms.Bootstrap/bin/Release/netstandard2.0/WebSharper.Forms.Bootstrap.xml ==> lib/netstandard2.0
 dependencies
-        WebSharper LOCKEDVERSION
-        WebSharper.UI LOCKEDVERSION
-        WebSharper.Forms LOCKEDVERSION
+        WebSharper ~> LOCKEDVERSION/3
+        WebSharper.UI ~> LOCKEDVERSION/3
+        WebSharper.Forms ~> LOCKEDVERSION/3
