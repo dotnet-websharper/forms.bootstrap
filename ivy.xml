@@ -1,8 +1,8 @@
 <ivy-module version="2.0">
-  <info organisation="IntelliFactory" module="websharper.forms.bootstrap" revision="3.0" />
+  <info organisation="IntelliFactory" module="zafir.forms.bootstrap" revision="3.0" />
   <dependencies>
-    <dependency name="websharper" rev="latest.integration"  />
-    <dependency name="websharper.ui.next" rev="latest.integration"  />
-    <dependency name="websharper.forms" rev="latest.integration"  />
+    <dependency name="zafir" rev="latest.integration"  />
+    <dependency name="zafir.ui" rev="latest.integration"  />
+    <dependency name="zafir.forms" rev="latest.integration"  />
   </dependencies>
 </ivy-module>
