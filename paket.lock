@@ -585,17 +585,17 @@ NUGET
       System.Xml.ReaderWriter (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net46) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Xml.XmlDocument (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= net46)
       System.Xml.XPath (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= net46)
-    WebSharper.Forms (4.4.0.204)
-      WebSharper (>= 4.4 < 4.5)
-      WebSharper.UI (>= 4.4.1 < 4.5)
   remote: https://daily.websharper.com/nuget
-    WebSharper (4.4.1.289)
-    WebSharper.FSharp (4.4.1.289)
-      WebSharper (4.4.1.289)
-    WebSharper.UI (4.4.2.138)
+    WebSharper (4.5.0.290)
+    WebSharper.Forms (4.5.0.209)
+      WebSharper (>= 4.5 < 4.6)
+      WebSharper.UI (>= 4.5 < 4.6)
+    WebSharper.FSharp (4.5.0.290)
+      WebSharper (4.5.0.290)
+    WebSharper.UI (4.5.0.140)
       HtmlAgilityPack (>= 1.7.1)
       System.Xml.XDocument (>= 4.3)
-      WebSharper (>= 4.4.1 < 4.5)
+      WebSharper (>= 4.5 < 4.6)
 
 GROUP build
 RESTRICTION: == net45
