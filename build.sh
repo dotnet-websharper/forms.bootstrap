@@ -1,15 +1,19 @@
 #!/bin/bash
 
-dotnet restore
-exit_code=$?
-if [ $exit_code -ne 0 ]; then
-  exit $exit_code
+set -e
+
+paket() {
+    if [ "$OS" = "Windows_NT" ]; then
+        .paket/paket.exe "$@"
+    else
+        mono .paket/paket.exe "$@"
+    fi
+}
+
+if [ "$WsUpdate" != "" ]; then
+    paket update -g wsbuild --no-install
 fi
 
-if test "$OS" = "Windows_NT"; then
-  # use .Net
-  packages/build/FAKE/tools/FAKE.exe $@ --fsiargs build.fsx
-else
-  # use mono
-  mono packages/build/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx
-fi
+paket restore
+
+exec paket-files/wsbuild/github.com/dotnet-websharper/build-script/WebSharper.Fake.sh "$@"

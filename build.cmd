@@ -1,12 +1,12 @@
 @echo off
 setlocal
-set PATH=%GitToolPath%;%PATH%
 
-cls
-
-dotnet restore
-if errorlevel 1 (
-  exit /b %errorlevel%
+if not "%WsUpdate%"=="" (
+  .paket\paket.exe update -g wsbuild --no-install
+  if errorlevel 1 exit /b %errorlevel%
 )
 
-packages\build\FAKE\tools\FAKE.exe build.fsx %*
+.paket\paket.exe restore
+if errorlevel 1 exit /b %errorlevel%
+
+call paket-files\wsbuild\github.com\dotnet-websharper\build-script\WebSharper.Fake.cmd %*
